@@ -79,6 +79,57 @@ m1 = map(int, n.replace('6', '5').split())
 m2 = map(int, n.replace('5', '6').split())
 print(sum(m1), sum(m2))
 
+#2720                   쉬움.
+n = int(input())
+lst = []
+for i in range(n):
+    lst.append(int(input()))
+for i in lst:
+    q = i//25
+    i -= q*25
+    d = i // 10
+    i -= d*10
+    n = i//5
+    i -= n*5
+    p = i//1
+    i -= p*1
+    print(q, d, n, p)
+
+#2847                   쉬움.
+n = int(input())
+lst = []
+cnt = 0
+for i in range(n):
+    lst.append(int(input()))
+for i in range(n-1, 0, -1):
+    while lst[i] <= lst[i-1]:
+        lst[i-1] -= 1
+        cnt += 1
+print(cnt)
+
+#11508                  쉬움. 근데 실행시간 오래걸림
+N = int(input())
+lst = []
+for i in range(N):
+    lst.append(int(input()))
+lst.sort(reverse=True)
+for i in range(2, len(lst), 3):
+    lst[i] = 0
+print(sum(lst))
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
