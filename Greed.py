@@ -117,14 +117,52 @@ for i in range(2, len(lst), 3):
     lst[i] = 0
 print(sum(lst))
 
-#
+#14720                  실패, 이유 모르겠음.
+N = int(input())
+cnt2 = 0
+lst = list(map(int, input().split()))
+for i in lst:
+    if i == 0:
+        cnt1 = i
+        cnt2 += 1
+        cnt3 = 0
+        break
+for i in range(cnt1, N-1):
+    if cnt3 + 1 == lst[i+1]:
+        cnt2 += 1
+        cnt3 += 1
+    elif cnt3 == 2 and lst[i+1] == 0:
+        cnt3 = 0
+        cnt2 += 1
+print(cnt2)
 
+#14469                  쉬움.
+N = int(input())
+cows = []
+T = 0
+arrive = []
+for i in range(N):
+    cows.append(input().split())
+    cows[i][0] = int(cows[i][0])
+    cows[i][1] = int(cows[i][1])
+# for i in range(N):
+#     arrive.append(cows[i][0])
+cows.sort()
+for i in range(N):
+    if T < cows[i][0]:
+        T += cows[i][0] - T
+    T += cows[i][1]
+print(T)
 
-
-
-
-
-
+#20044
+n = int(input())
+k = 2*n - 1
+lst = list(map(int, input().split()))
+lst.sort()
+m = []
+for i in range(n):
+    m.append(lst[i]+lst[k-i])
+print(min(m))
 
 
 
