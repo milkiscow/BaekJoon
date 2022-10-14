@@ -11,22 +11,17 @@ for i in lst1:
     lst2.append(j)
 print(sum(lst2))
 
-#11047                  예제 넣었을 때는 되는데 제출시 틀림.
-N, M = input().split()
-N, M = int(N), int(M)
+#11047                  예제 넣었을 때는 되는데 제출시 틀림. >>> 고쳤음(10.24)
+N, M = map(int, input().split())
 n = 0
 lst1 = []
 for i in range(N):
-    lst1.append(input())
+    lst1.append(int(input()))
+lst1.sort(reverse = True)
 for i in range(N):
-    lst1[i] = int(lst1[i])
-lst1.sort()
-for i in range(N-1, -1, -1):
     m = M // lst1[i]
     n += m
     M -= m*lst1[i]
-    print(i, end=' ')
-    print(m)
 print(n)
 
 #1026                   B 변경 안하고 하는법 모르겠음.
@@ -117,24 +112,20 @@ for i in range(2, len(lst), 3):
     lst[i] = 0
 print(sum(lst))
 
-#14720                  실패, 이유 모르겠음.
+#14720                  실패, 이유 모르겠음. >>> 고쳤음(10.24)
 N = int(input())
-cnt2 = 0
 lst = list(map(int, input().split()))
-for i in lst:
-    if i == 0:
-        cnt1 = i
-        cnt2 += 1
-        cnt3 = 0
-        break
-for i in range(cnt1, N-1):
-    if cnt3 + 1 == lst[i+1]:
-        cnt2 += 1
-        cnt3 += 1
-    elif cnt3 == 2 and lst[i+1] == 0:
-        cnt3 = 0
-        cnt2 += 1
-print(cnt2)
+m = lst.index(0)
+n = 0
+cnt = 1
+for i in range(m, N):
+    if n + 1 == lst[i]:
+        n += 1
+        cnt += 1
+    elif n == 2 and lst[i] == 0:
+        n = 0
+        cnt += 1
+print(cnt) 
 
 #14469                  쉬움.
 N = int(input())
@@ -154,7 +145,7 @@ for i in range(N):
     T += cows[i][1]
 print(T)
 
-#20044
+#20044                  쉬움.
 n = int(input())
 k = 2*n - 1
 lst = list(map(int, input().split()))
@@ -164,9 +155,15 @@ for i in range(n):
     m.append(lst[i]+lst[k-i])
 print(min(m))
 
+#16435                  쉬움. 코드 줄이는법 참고함.
+m = lambda: map(int, input().split())
+N, L = m()
+for i in sorted(m()):
+    if L >= i:
+        L += 1
+print(L)
 
-
-
+#
 
 
 
