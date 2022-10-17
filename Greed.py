@@ -163,7 +163,28 @@ for i in sorted(m()):
         L += 1
 print(L)
 
-#
+#3135                   쉬움.
+A, B = map(int, input().split())
+N = int(input())
+lst = []
+a = abs(B - A)
+for i in range(N):
+    lst.append(int(input()))
+for i in range(N):
+    b = abs(lst[i] - B)
+    if b < a:
+        a = b+1
+print(a)
+
+
+
+
+
+
+
+
+
+
 
 
 
