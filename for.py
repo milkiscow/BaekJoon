@@ -57,8 +57,37 @@ N = int(input())
 for i in range(1, N+1):
     print(('*'*i).rjust(N))
 
+#10952
+import sys
+while True:
+    a, b = map(int, sys.stdin.readline().split())
+    c = a+b
+    if c == 0:
+        break
+    print(c)
 
+#10951                  EOF 이해안됨;
+while True:
+    try:
+        a, b = map(int, input().split())
+        print(a+b)
+    except EOFError:
+        break
 
-
-
+#1110
+N = input()
+if int(N) < 10:
+    N += '0'
+n = str(N)
+cnt = 0
+while True:
+    A = n[0]
+    B = n[-1]
+    C = str(int(A)+int(B))
+    D = C[-1]
+    n = B + D
+    cnt += 1
+    if n == N:
+        print(cnt)
+        break
 

@@ -43,16 +43,32 @@ for i in range(N):
     lst[i] = lst[i]/M*100
 print(sum(lst)/N)
 
+#8958
+N = int(input())
+for i in range(N):
+    q = input()
+    p = 0
+    cnt = 0
+    for j in range(len(q)):
+        if q[j] == 'X':
+            cnt = 0
+            continue
+        else:
+            cnt += 1
+            p += cnt
+    print(p)
 
-
-
-
-
-
-
-
-
-
+#4344
+C = int(input())
+for i in range(C):
+    cnt = 0
+    lst = list(map(int, input().split()))
+    N = lst.pop(0)
+    A = sum(lst)/N
+    for j in range(N):
+        if lst[j] > A:
+            cnt += 1
+    print('{:.3f}%' .format(cnt/N*100))
 
 
 
